@@ -1,0 +1,4 @@
+;; to open the ClojureScript repl
+(require '[noir.cljs.repl :as repl]')
+(repl/browser)
+
