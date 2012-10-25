@@ -1,6 +1,7 @@
 # ftmsclj
 
 A website written with Noir and ClojureScript in the manner of http://clojurescriptone.com
+The goal is to use Immutant and Datomic
 
 ## Usage
 
