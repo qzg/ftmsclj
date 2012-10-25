@@ -10,4 +10,5 @@
         port (Integer. (get (System/getenv) "PORT" "8070"))]
     (cljs/start mode cljs-options)
     (server/start port {:mode mode
-                        :ns 'ftmsclj})))
+                        :ns 'ftmsclj
+                        :base-url "/"})))

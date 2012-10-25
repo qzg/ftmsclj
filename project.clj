@@ -8,12 +8,16 @@
                  [fetch "0.1.0-alpha2"]
                  [crate "0.2.0-alpha2"]
                  [noir "1.3.0-beta7"]
-                 [com.datomic/datomic-free "0.8.3488"]]
+                 [hiccup "1.0.1"]
+                 [com.datomic/datomic-free "0.8.3511"]]
   :plugins [[lein-git-deps "0.0.1-SNAPSHOT"]]
   :dev-dependencies [[lein-git-deps "0.0.1-SNAPSHOT"]]
   :git-dependencies [["https://github.com/twitter/bootstrap.git"]
                      ["https://github.com/cloudhead/less.js.git"]
                      ["https://github.com/brentonashworth/one.git"]]
   :cljsbuild {:builds [{}]}
+  :immutant {:resolve-dependencies true
+             :context-path "/"
+             :virtual-host ["localhost" "fashionthatmakessense.com" "www.fashionthatmakessense.com"] }
   :main ^{:skip-aot true} ftmsclj.server)
 ;; aot == "ahead of time"

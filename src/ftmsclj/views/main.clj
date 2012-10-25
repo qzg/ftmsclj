@@ -8,30 +8,33 @@
         [hiccup.core :only [html]]
         [ftmsclj.models.user :only [names]]))
 
-(defn present [content]
+(defn present [title content]
   "If the accept header calls for HTML, serve it within the layout"
   (if (> (.indexOf (get (:headers (ring-request)) "accept") "html") -1) 
-    (common/layout content)
+    (common/layout title content)
     content))
 
+
 (defpage "/" []
-         (common/layout (home/home)))
+  (common/layout "Home" (home/home)))
+
 
 (defpage "/GraceAdele/:pageid" {:keys [pageid]}
+  ;; /GraceAdele/Buy ;; /GraceAdele/Sell ;; /GraceAdele/Party ;; /GraceAdele/Learn
   ;; filter out URLs we don't explicitly serve
   (if (some #(= (.toLowerCase pageid) %) ["buy" "sell" "learn" "party"])
-    (present (eval (read-string (str "(ftmsclj.views.content/" (.toLowerCase pageid) ")"))))
-    false))
+    (present pageid (eval (read-string (str "(ftmsclj.views.content/" (.toLowerCase pageid) ")"))))
+    {:status 404 :body (present "Not Found" (content/article "Not Found" (content/not-found)))}))
 
 
 (defpage "/GraceAdele/Blog" {}
-  (present (content/buy)))
+  (present "Blog" (content/bloghome)))
 
-;; /GraceAdele/Buy
-;; /GraceAdele/Sell
-;; /GraceAdele/Party
-;; /GraceAdele/Learn
-;; /GraceAdele/Blog/permalink-title-goes-here.html
+
+(defpage "/GraceAdele/Blog/:page" {:keys [page]}
+  ;; /GraceAdele/Blog/permalink-title-goes-here.html
+  (present page (content/blogpage page)))
+
 
 (defremote meet [n]
   (println n)

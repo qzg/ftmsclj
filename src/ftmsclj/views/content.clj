@@ -6,7 +6,7 @@
 
 
 (defpartial article [title content]
-  [:article 
+  [:article#content-block  
     [:h1 title] 
     content])
 
@@ -16,11 +16,9 @@
     [:div "You can definitely shop Grace Adele online ... HERE!"]))
 
 
-
 (defpartial sell []
   (article "Sell Grace Adele Online!" 
     [:div "Sell Grace Adele!!!"]))
-
 
 
 (defpartial learn []
@@ -33,5 +31,16 @@
     [:div "Have a GA Party!!!"]))
 
 
+(defpartial bloghome []
+  (article "Welcome to the blog!" 
+    [:div "Blog Index Goes Here"]))
 
+
+(defpartial blogpage [page-name]
+  (article (str "Shouldn't I be looking up the page " page-name "?")
+    [:div page-name]))
+
+
+(defpartial not-found []
+  [:div "Return to the " [:a "homepage"]])
 

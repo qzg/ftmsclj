@@ -2,34 +2,35 @@
   (:require [noir.cljs.core :as cljs])
   (:use [noir.core :only [defpartial]]
         [hiccup.page :only [include-css include-js html5]]
+        [hiccup.util :only [with-base-url]]
         [hiccup.element]))
 
-(defpartial layout [& content]
-  (html5
-    [:head
-      [:title "Grace Adele : Fashion That Makes Sense :: Home"]
-      [:meta {:name "description" :content "Grace Adele makes bags, clutches, jewelry and accessories that make sense out of fashion.  Buy online or sign up to become a Grace Adele fashion consultant."} ]
-      [:link {:rel "icon" :href "/img/favicon.ico"}]
-      (include-css "/css/bootstrap_and_overrides.css" "/css/welcome.css")
-      (include-js "/js/jquery.js"                "/js/jquery_ujs.js" 
-                  "/js/bootstrap-transition.js"  "/js/bootstrap-alert.js"
-                  "/js/bootstrap-modal.js"       "/js/bootstrap-dropdown.js"
-                  "/js/bootstrap-scrollspy.js"   "/js/bootstrap-tab.js"
-                  "/js/bootstrap-tooltip.js"     "/js/bootstrap-popover.js"
-                  "/js/bootstrap-button.js"      "/js/bootstrap-collapse.js"
-                  "/js/bootstrap-carousel.js"    "/js/bootstrap-typeahead.js"
-                  "/js/bootstrap.js"             "/js/application.js")]
-    [:body
-     [:div.container
-      [:header#topbanner
-        (image {:alt "Grace Adele" :id "galogo"} "/img/logo-black.png" )
-        (image {:alt "Kiyu and Theresa Gabriel" :id "qtgabriel"} "/img/KiyuAndTheresaGabriel.png")
-        [:nav 
-          (link-to {:id "learnlink" :title "Learn more about Grace Adele"} "https://fashionthatmakessense.graceadele.us/GraceAdele/Home" [:span "Learn"])
-          (link-to {:id "partylink" :title "Have a Grace Adele Home or Book Party"} "https://fashionthatmakessense.graceadele.us/GraceAdele/Host" [:span "Party"])
-          (link-to {:id "selllink" :title "Sell Grace Adele by becoming a Grace Adele Independent Consultant"} "https://fashionthatmakessense.graceadele.us/GraceAdele/Join" [:span "Sell"])
-          (link-to {:id "buylink" :title "Buy Grace Adele Products online"} "https://fashionthatmakessense.graceadele.us/GraceAdele/Buy/BuildMyLook" [:span "Buy"]) ]]
-      content]]))
+(defpartial layout [title & content]
+    (html5
+      [:head
+        [:title (str "Grace Adele : Fashion That Makes Sense :: " title)]
+        [:meta {:name "description" :content "Grace Adele makes bags, clutches, jewelry and accessories that make sense out of fashion.  Buy online or sign up to become a Grace Adele fashion consultant."} ]
+        [:link {:rel "icon" :href "/img/favicon.ico"}]
+        (include-css "/css/bootstrap_and_overrides.css" "/css/welcome.css")
+        (include-js "/js/jquery.js"                "/js/jquery_ujs.js" 
+                    "/js/bootstrap-transition.js"  "/js/bootstrap-alert.js"
+                    "/js/bootstrap-modal.js"       "/js/bootstrap-dropdown.js"
+                    "/js/bootstrap-scrollspy.js"   "/js/bootstrap-tab.js"
+                    "/js/bootstrap-tooltip.js"     "/js/bootstrap-popover.js"
+                    "/js/bootstrap-button.js"      "/js/bootstrap-collapse.js"
+                    "/js/bootstrap-carousel.js"    "/js/bootstrap-typeahead.js"
+                    "/js/bootstrap.js"             "/js/application.js")]
+      [:body
+       [:div.container
+        [:header#topbanner
+          (image {:alt "Grace Adele" :id "galogo"} "/img/logo-black.png" )
+          (image {:alt "Kiyu and Theresa Gabriel" :id "qtgabriel"} "/img/KiyuAndTheresaGabriel.png")
+          [:nav 
+            (link-to {:id "learnlink" :title "Learn more about Grace Adele"} "https://fashionthatmakessense.graceadele.us/GraceAdele/Home" [:span "Learn"])
+            (link-to {:id "partylink" :title "Have a Grace Adele Home or Book Party"} "https://fashionthatmakessense.graceadele.us/GraceAdele/Host" [:span "Party"])
+            (link-to {:id "selllink" :title "Sell Grace Adele by becoming a Grace Adele Independent Consultant"} "https://fashionthatmakessense.graceadele.us/GraceAdele/Join" [:span "Sell"])
+            (link-to {:id "buylink" :title "Buy Grace Adele Products online"} "https://fashionthatmakessense.graceadele.us/GraceAdele/Buy/BuildMyLook" [:span "Buy"]) ]]
+        content]]))
 
 
 (defpartial minimal-layout [title & content]

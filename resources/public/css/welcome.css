@@ -44,3 +44,5 @@
 #simple-steps li { float:left;  display:block;  margin-right:18px; }
 #gacrb { position:absolute;  top:-60px;  left:100px;  }
 #grace-adele-approved { position:absolute;  top:-110px; }
+
+#content-block { clear:both; }
