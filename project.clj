@@ -11,9 +11,9 @@
                  [hiccup "1.0.1"]
                  [com.datomic/datomic-free "0.8.3511"]]
   :plugins [[lein-git-deps "0.0.1-SNAPSHOT"]]
-  :dev-dependencies [[lein-git-deps "0.0.1-SNAPSHOT"]]
   :git-dependencies [["https://github.com/twitter/bootstrap.git"]
                      ["https://github.com/cloudhead/less.js.git"]
+                     ["https://github.com/weavejester/hiccup.git"]
                      ["https://github.com/brentonashworth/one.git"]]
   :cljsbuild {:builds [{}]}
   :immutant {:resolve-dependencies true

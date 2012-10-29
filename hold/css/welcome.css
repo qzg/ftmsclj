@@ -1,0 +1,48 @@
+/* CSS declarations go here */
+#topbanner img { margin:20px; }
+#qtgabriel { float:right; }
+#topbanner nav {  text-align:right;  padding-right:20px;  border-top:1px solid black;  padding-top:10px;  }
+#topbanner nav a {  display:block;  height:30px;  overflow:hidden;  float:right;  width:75px;  margin-right:45px; }
+#topbanner nav a span { display:none; }
+#topbanner nav a#buylink { background:transparent url(/img/BuySellPartyLearn.png) no-repeat 0 0; }
+#topbanner nav a#selllink {  background:transparent url(/img/BuySellPartyLearn.png) no-repeat -95px 0; }
+#topbanner nav a#partylink {  background:transparent url(/img/BuySellPartyLearn.png) no-repeat -184px 0; }
+#topbanner nav a#learnlink {  background:transparent url(/img/BuySellPartyLearn.png) no-repeat -300px 0; }
+
+#topbanner nav a#buylink:hover { background:transparent url(/img/BuySellPartyLearn-hover.png) no-repeat 0 0; }
+#topbanner nav a#selllink:hover {  background:transparent url(/img/BuySellPartyLearn-hover.png) no-repeat -95px 0; }
+#topbanner nav a#partylink:hover {  background:transparent url(/img/BuySellPartyLearn-hover.png) no-repeat -184px 0; }
+#topbanner nav a#learnlink:hover {  background:transparent url(/img/BuySellPartyLearn-hover.png) no-repeat -300px 0; }
+
+#what-color-feeling { display:block;  margin:75px auto; }
+
+#color-swatches { padding-left:111px;  height:170px;  }
+#color-swatches div { height:90px;  width:90px;  float:left;  margin-right:40px;  color:#ffffff;  line-height:90px;  padding:5px;  text-align:center;  font-size:20px; }
+#color-swatches div:hover { margin-left:-6px;  margin-top:-6px;  margin-right:34px;  border:6px solid #ce6e23;  }
+#swatch-red { background-color:#AB0032; }
+#swatch-zebra { background:transparent url(/img/pattern-zebra.jpg) no-repeat top left;  }
+#swatch-zebra span { background-color:#000; color:#fff; }
+#swatch-teal { background-color:#4D858D;; }
+#swatch-black { background-color:#000000; }
+#swatch-leopard { background:transparent url(/img/pattern-leopard.jpg) no-repeat top left;  }
+#swatch-leopard { background-color:#000; }
+#swatch-natural { background-color:#996951;  color:#000;  }
+#swatch-purple { background-color:#4D2F47; }
+
+#page-footer {  height:425px;  border-top:3px dotted #4d858d;  margin-top:100px;  position:relative; }
+#page-footer section { }
+#page-footer h3 span { display:none;  }
+
+#ga-style-system {  }
+#ga-style-system h3 { background:transparent url(/img/GAStyleSystem.png) no-repeat top left;  width:550px;  height:50px;  margin-top:20px;  }
+#buy-party-information h3.buy { background:transparent url(/img/GAStyleSystem.png) no-repeat -563px 0;  width:130px;  height:50px;  margin-top:20px;  }
+#buy-party-information h3.party { background:transparent url(/img/GAStyleSystem.png) no-repeat -722px 0;  width:210px;  height:50px;  margin-top:20px;  }
+#sell-information h3.sell { background:transparent url(/img/GAStyleSystem.png) no-repeat -958px 0;  width:210px;  height:50px;  margin-top:20px;  }
+
+#simple-steps img { }
+#simple-steps { list-style-type:none;  margin-top:20px;  }
+#simple-steps li { float:left;  display:block;  margin-right:18px; }
+#gacrb { position:absolute;  top:-60px;  left:100px;  }
+#grace-adele-approved { position:absolute;  top:-110px; }
+
+#content-block { clear:both; }

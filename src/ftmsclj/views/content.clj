@@ -5,15 +5,34 @@
         [hiccup.element]))
 
 
-(defpartial article [title content]
+(defpartial article [title content & more-content]
   [:article#content-block  
     [:h1 title] 
-    content])
+    (conj content more-content)])
 
 
 (defpartial buy []
-  (article "Shop Grace Adele Online!" 
-    [:div "You can definitely shop Grace Adele online ... HERE!"]))
+  (article "Are you ready?" 
+   [:div.row-fluid
+    [:div.span7 "this is a test"]
+    [:p 
+      [:ul 
+        [:li.lead "You" [:i " like "] "wearing a beautifully coordinated outfit."]
+        [:li.lead "Putting it together" [:i " every day "] "can be pretty challenging."]
+        [:li.lead "GraceAdele makes it " [:i "easy."]]]]
+    [:h2 "A Beautifully Coordinated Outfit"]
+    [:p "What goes into just" [:em " one "] "&ldquo;beautifully coordinated outfit&rdquo;?"]
+    [:ul
+     [:li "clothes"]
+     [:li "purse/clutch"]
+     [:li "jewelry"]
+     [:li "accessories"]
+     [:li "shoes"]]
+    [:p "... and it all has to" [:em " match"] ".  You already have clothes and shoes that match.
+        GraceAdele provides the rest.  Professionally designed and color-coordinated collections of
+        purses, clutches, jewelry and accessories.  Just pick a color.  Your purse, jewelry and 
+        accesory selections are suddenly easy. You can be certain you'll be the recipient of 
+        compliments all day long." ]]))
 
 
 (defpartial sell []

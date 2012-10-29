@@ -11,15 +11,9 @@
         [:title (str "Grace Adele : Fashion That Makes Sense :: " title)]
         [:meta {:name "description" :content "Grace Adele makes bags, clutches, jewelry and accessories that make sense out of fashion.  Buy online or sign up to become a Grace Adele fashion consultant."} ]
         [:link {:rel "icon" :href "/img/favicon.ico"}]
-        (include-css "/css/bootstrap_and_overrides.css" "/css/welcome.css")
-        (include-js "/js/jquery.js"                "/js/jquery_ujs.js" 
-                    "/js/bootstrap-transition.js"  "/js/bootstrap-alert.js"
-                    "/js/bootstrap-modal.js"       "/js/bootstrap-dropdown.js"
-                    "/js/bootstrap-scrollspy.js"   "/js/bootstrap-tab.js"
-                    "/js/bootstrap-tooltip.js"     "/js/bootstrap-popover.js"
-                    "/js/bootstrap-button.js"      "/js/bootstrap-collapse.js"
-                    "/js/bootstrap-carousel.js"    "/js/bootstrap-typeahead.js"
-                    "/js/bootstrap.js"             "/js/application.js")]
+        (include-css "/css/bootstrap.css" "/css/bootstrap_responsive.css" "/css/welcome.css")
+        (include-js "/js/jquery.js"       "/js/jquery_ujs.js" 
+                    "/js/bootstrap.js"    "/js/application.js")]
       [:body
        [:div.container
         [:header#topbanner
